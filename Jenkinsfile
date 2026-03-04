@@ -1,21 +1,18 @@
 pipeline{
-        agent any{
+        agent any
         stages{
-                stage('Build'){
-                        steps{
-                                echo "Buildmyweb"
+                stage('Build-1'){
+                steps{
+                        bat 'mvn install'
                         }
                 }
-                stage('Test'){
-                        steps{
-                                echo "testing"
-                        }
-                }
-                stage('Deploy'){
-                        steps{
-                                echo "deploy"
+                stage('Run')
+                steps{
+                        bat 'java -jar target/java-project2-1.7'
                         }
                 }
         }
 }
+
+
 
