@@ -6,12 +6,13 @@ pipeline{
                         bat 'mvn install'
                         }
                 }
-                stage('Run')
+                stage('Run'){
                 steps{
                         bat 'java -jar target/java-project2-1.7'
                         }
                 }
         }
+}
 
 
 
